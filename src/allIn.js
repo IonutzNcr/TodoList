@@ -1,19 +1,22 @@
-import toDo from "./toDo";
+import appender from "./appender";
+import category from "./category";
+import default_page from "./default-page";
 
+import createItem from "./item";
+import stock from "./stock";
 
-toDo.add("yo","say","hight");
-/* console.log(toDo.tasks); */
+import "./style.css"
 
-toDo.update(toDo.tasks[0],"title","new Title");
-/* console.log(toDo.tasks); */
+default_page();
 
+const obj1 = category("TOP",0)
 
-toDo.add("so","m","low");
-console.log(toDo.tasks);
+const item1 = createItem("todo",'finir todo',"0","TOP")
 
-toDo.remove(0);
+obj1.addItems(item1)
 
-console.log(toDo.tasks);
+console.log(obj1)
 
+appender.appendCategory(obj1); 
 
-//why before and after remove the console log the same thing is not normal .... 
+stock[0] = obj1;
