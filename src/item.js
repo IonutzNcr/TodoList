@@ -1,10 +1,13 @@
-function createItem(title,description,id){
-    return {
-        title,
-        description,
-        id,
-        
-    }
+function itemFactory(title,description="none",id,dueDate="none",priority="low",checklist=false){
+return{
+    title,
+    description,
+    id,
+    dueDate,
+    priority,
+    checklist,
+    
+}
 }
 
-export default createItem;
+export default itemFactory;

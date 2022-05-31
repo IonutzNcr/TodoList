@@ -1,22 +1,13 @@
+import default_page from "./default_page";
 import appender from "./appender";
-import category from "./category";
-import default_page from "./default-page";
-
-import createItem from "./item";
-import stock from "./stock";
-
+import categoryFactory from "./category";
+import controller from "./controller";
+import displayer from "./displayer";
+import itemFactory from "./item";
+import categories from "./stock";
+import create_default_category from "./default_category";
 import "./style.css"
 
-default_page();
+create_default_category();
 
-const obj1 = category("TOP",0)
-
-const item1 = createItem("todo",'finir todo',"0","TOP")
-
-obj1.addItems(item1)
-
-console.log(obj1)
-
-appender.appendCategory(obj1); 
-
-stock[0] = obj1;
+document.querySelector("#add_category").addEventListener("click",()=>{console.log(categories)})

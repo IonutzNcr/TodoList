@@ -1,17 +1,10 @@
-import appender from "./appender";
-
-function category(title,id){
+function categoryFactory(title,id,isBold=true){
     return{
         title,
         id,
-        items:[],
-        addItems:function(item){
-            item.category_id = this.id;
-            this.items.push(item);
-          },
-
-        
+        items:[{title:"Lala",description:"Omg",id:0,dueDate:"none",priority:"low",checklist:false}],
+        isBold,
     }
 }
 
-export default category;
+export default categoryFactory;

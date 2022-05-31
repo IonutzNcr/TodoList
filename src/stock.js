@@ -1,3 +1,3 @@
-const stock = [];
+const categories = [];
 
-export default stock;
+export default categories;

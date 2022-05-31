@@ -1,26 +1,3 @@
-body{
-    background-color: rgb(206, 132, 132);
-}
-
-/* layout */
-
-body{
-    display:flex;
-    gap:20px;
-}
-
-#input-title-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end ;
-}
-
-#div-input-title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#create-new-category{
-    max-width: min-content;
+.hidden{
+    display:none;
 }
