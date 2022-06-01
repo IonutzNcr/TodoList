@@ -7,7 +7,6 @@ import itemFactory from "./item";
 import categories from "./stock";
 import create_default_category from "./default_category";
 import "./style.css"
+import { checkState } from "./localStorage";
 
-create_default_category();
-
-document.querySelector("#add_category").addEventListener("click",()=>{console.log(categories)})
+window.addEventListener("load",checkState);

@@ -1,10 +1,10 @@
 import events from "./events";
 
 const default_page = (()=>{
-    const div1 = inputForCategory();
-    const div2 = divForCategories();
-    const div3 = inputForItem();
-    const div4 = divForItems();
+    const div1 = _inputForCategory();
+    const div2 = _divForCategories();
+    const div3 = _inputForItem();
+    const div4 = _divForItems();
 
     document.querySelector("body").appendChild(div1);
     document.querySelector("body").appendChild(div2);
@@ -14,7 +14,7 @@ const default_page = (()=>{
 
 export default default_page;
 
-function inputForCategory(){
+function _inputForCategory(){
     const div = document.createElement("div");
     div.setAttribute("id","container1");
     const input = document.createElement("input");
@@ -24,6 +24,7 @@ function inputForCategory(){
     button.textContent = "Add";
     button.setAttribute("id","add_category");
     button.addEventListener("click",events.display_new_category);
+    button.addEventListener("click",_clearInpus.bind(null,"category"));
 
     div.appendChild(input);
     div.appendChild(button);
@@ -31,7 +32,7 @@ function inputForCategory(){
     return div;
 }
 
-function inputForItem(){
+function _inputForItem(){
     const div = document.createElement("div");
     div.setAttribute("id","container3");
     const input = document.createElement("input");
@@ -41,6 +42,7 @@ function inputForItem(){
     const input_calendrier = document.createElement("input");
     input_calendrier.setAttribute("placeholder","Pick your due date...");
     input_calendrier.setAttribute("id","input_dueDate");
+    input_calendrier.setAttribute("type","date");
     const input_description = document.createElement("textarea");
     input_description.setAttribute("placeholder","Description...");
     input_description.setAttribute("id","input_description");
@@ -85,6 +87,7 @@ function inputForItem(){
     add_btn.setAttribute("id","add_item");
     add_btn.textContent = "Add";
     add_btn.addEventListener("click",events.display_new_item);
+    add_btn.addEventListener("click",_clearInpus.bind(null,"item"))
     
     div.appendChild(input);
     div.appendChild(input_calendrier); 
@@ -95,16 +98,32 @@ function inputForItem(){
     return div;
 }
 
-function divForCategories(){
+function _divForCategories(){
     const div = document.createElement("div");
     div.setAttribute("id","categories_container");
     
     return div;
 }
 
-function divForItems(){
+function _divForItems(){
     const div = document.createElement("div");
     div.setAttribute("id","items_container");
     
     return div;
+}
+
+function _clearInpus(arg){
+    if(arg=="category"){
+        document.querySelector("#input_category").value = "";
+        return;
+    } else {
+        document.querySelector("#input_title").value = "";
+        document.querySelector("#input_dueDate").value = "";
+        document.querySelector("#input_description").value = "";
+        const ele = document.getElementsByName("priority");
+        for(var i=0;i<ele.length;i++){
+            ele[i].checked = false;
+        }
+       
+        }
 }

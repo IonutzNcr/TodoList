@@ -5,6 +5,7 @@ import itemFactory from "./item";
 import categories from "./stock";
 import appender from "./appender";
 import create_default_category from "./default_category";
+import { update_Storage } from "./localStorage";
 
 const events = (()=>{
     const display_new_category = ()=>{
@@ -15,6 +16,7 @@ const events = (()=>{
         appender.append_category(category);
         appender.remove_items_from_DOM();
         appender.append_items(category);
+        update_Storage();
     };
 
     const display_new_item = ()=>{
@@ -26,6 +28,7 @@ const events = (()=>{
         controller.add_item(category,item);
         appender.remove_items_from_DOM();
         appender.append_items(category);
+        update_Storage();
     };
 
     const display_items = (e) =>{
@@ -41,6 +44,7 @@ const events = (()=>{
         appender.remove_items_from_DOM();
         //append its items
         appender.append_items(category);
+        update_Storage();
     };
 
     const remove_category = (e) =>{
@@ -58,13 +62,16 @@ const events = (()=>{
                 categories[0].isBold = true;
                 categories.forEach(e=>appender.append_category(e));
                 appender.append_items(categories[0]);
+                update_Storage();
                 return;
             } else {
                 create_default_category();
+                update_Storage();
                 return;
             }
         } else {
             categories.forEach(e=>appender.append_category(e));
+            update_Storage();
             return;
         }
     };
@@ -82,6 +89,7 @@ const events = (()=>{
         controller.update_item_id(category);
         appender.remove_items_from_DOM();
         appender.append_items(category);
+        update_Storage();
     }
 
    
