@@ -52,6 +52,12 @@ const controller = (()=>{
         }
     }
 
+   /*  const control_prio = (category)=>{
+        category.items.sort((a,b)=>{
+            if(a==)
+        })
+    } */
+
     return{
         add_category,
         remove_category,

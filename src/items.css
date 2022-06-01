@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding:0;
+}
+#items_container>div{
+    padding:20px 20px 0 20px;
+    justify-content: space-evenly;
+    box-shadow: 0 10px 10px 0;
+    margin-bottom: 20px;
+}
+
+.visible{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+[data-id]{
+    background-color: rgba(36, 29, 29, 0.521);
+}
+.remove_item{
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    border:none;
+    color:red;
+}
+
+.details{
+    width: 100%;
+}
+
+
+

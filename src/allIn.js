@@ -8,5 +8,12 @@ import categories from "./stock";
 import create_default_category from "./default_category";
 import "./style.css"
 import { checkState } from "./localStorage";
+import "./input1.css";
+import "./layout.css";
+import "./categories.css";
+import "./input2.css";
+import "./items.css";
+import "./typo.css";
+import "./general.css";
 
 window.addEventListener("load",checkState);

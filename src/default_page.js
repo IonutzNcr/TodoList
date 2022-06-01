@@ -90,8 +90,8 @@ function _inputForItem(){
     add_btn.addEventListener("click",_clearInpus.bind(null,"item"))
     
     div.appendChild(input);
-    div.appendChild(input_calendrier); 
     div.appendChild(input_description);
+    div.appendChild(input_calendrier); 
     div.appendChild(fieldset);
     div.appendChild(add_btn);
     

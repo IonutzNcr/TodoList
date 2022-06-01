@@ -1,0 +1,14 @@
+#container3{
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(36, 29, 29, 0.521);
+    padding:20px 20px;
+    justify-content: space-evenly;
+    box-shadow: 0 10px 10px 0;
+
+}
+
+#add_item{
+    width: fit-content;
+    margin-left:auto;
+}

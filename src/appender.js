@@ -31,6 +31,9 @@ const appender = (()=>{
     const append_items = (category)=>{
         category.items.forEach(e=>{
             const div = document.createElement("div");
+            if(e.priority=="hight"){
+                div.classList.add("green");
+            }
             div.setAttribute("data-id",e.id);
             div.setAttribute("data-family",category.id);
             const div_visible = document.createElement("div");
@@ -38,20 +41,24 @@ const appender = (()=>{
             const p_title = document.createElement("p");
             p_title.textContent = e.title;
             const p_dueDate = document.createElement("p");
+            p_dueDate.classList.add("date");
             p_dueDate.textContent = e.dueDate;
             const button_remove = document.createElement("button");
             button_remove.textContent = "x";
+            button_remove.classList.add("remove_item");
             button_remove.addEventListener("click",events.remove_item.bind(null,button_remove));
             
             const div_hidden = document.createElement("div");
             div_hidden.classList.add("hidden");
             const p_description = document.createElement("p");
             p_description.textContent = e.description;
+            p_description.classList.add("description");
             div_hidden.appendChild(p_description);
 
             const div_show_details = document.createElement("div");
             const button_show_details = document.createElement("button");
             button_show_details.textContent = '___';
+            button_show_details.classList.add("details");
             button_show_details.addEventListener("click",events.display_details.bind(null,button_show_details));
             div_show_details.appendChild(button_show_details) 
 

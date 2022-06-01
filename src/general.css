@@ -1,0 +1,17 @@
+.bold{
+    font-weight: 600;
+    color:rgb(0, 12, 124);
+}
+
+.date {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.description{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+div.green{
+    background-color: rgb(77, 189, 77);
+}
