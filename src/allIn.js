@@ -15,5 +15,6 @@ import "./input2.css";
 import "./items.css";
 import "./typo.css";
 import "./general.css";
+import "./cursor.css";
 
 window.addEventListener("load",checkState);

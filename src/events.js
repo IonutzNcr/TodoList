@@ -21,11 +21,10 @@ const events = (()=>{
 
     const display_new_item = ()=>{
         const data = collector.getDataForItem();
-        console.log(data);
-        const category = categories[+data.category_id];//undefined
-        
-        const item = itemFactory(data.title,data.description,category.items.length,data.dueDate,data.priority)
+        const category = categories[+data.category_id];
+        const item = itemFactory(data.title,data.description,category.items.length,data.dueDate,data.priority);
         controller.add_item(category,item);
+        controller.sort_items(category);
         appender.remove_items_from_DOM();
         appender.append_items(category);
         update_Storage();

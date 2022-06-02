@@ -52,11 +52,12 @@ const controller = (()=>{
         }
     }
 
-   /*  const control_prio = (category)=>{
+    const sort_items = (category)=>{
         category.items.sort((a,b)=>{
-            if(a==)
+            if(a.priority=="hight"&&b.priority=="low") return -1;
+            if(a.priority==b.priority&&+a.id>+b.id) return -1;
         })
-    } */
+    }
 
     return{
         add_category,
@@ -68,6 +69,7 @@ const controller = (()=>{
         update_bold,
         update_id,
         update_item_id,
+        sort_items,
     }
 })(); 
 
