@@ -6,28 +6,35 @@ import categories from "./stock";
 import appender from "./appender";
 import create_default_category from "./default_category";
 import { update_Storage } from "./localStorage";
+import src2 from "./2.png";
+import src1 from "./1.png";
 
 const events = (()=>{
     const display_new_category = ()=>{
         const data = collector.getDataForNewCategory();
-        const category = categoryFactory(data.title,categories.length);
-        _remove_bold();
-        controller.add_category(category);   
-        appender.append_category(category);
-        appender.remove_items_from_DOM();
-        appender.append_items(category);
-        update_Storage();
+        if(data.title!=""){
+            const category = categoryFactory(data.title,categories.length);
+            _remove_bold();
+            controller.add_category(category);   
+            appender.append_category(category);
+            appender.remove_items_from_DOM();
+            appender.append_items(category);
+            update_Storage();
+        }
     };
 
     const display_new_item = ()=>{
         const data = collector.getDataForItem();
-        const category = categories[+data.category_id];
-        const item = itemFactory(data.title,data.description,category.items.length,data.dueDate,data.priority);
-        controller.add_item(category,item);
-        controller.sort_items(category);
-        appender.remove_items_from_DOM();
-        appender.append_items(category);
-        update_Storage();
+        if(data.title!=""){
+            const category = categories[+data.category_id];
+            const item = itemFactory(data.title,data.description,category.items.length,data.dueDate,data.priority);
+            controller.add_item(category,item);
+            controller.sort_items(category);
+            appender.remove_items_from_DOM();
+            appender.append_items(category);
+            update_Storage();
+        }
+        
     };
 
     const display_items = (e) =>{
@@ -106,16 +113,15 @@ const events = (()=>{
 
     const display_details = (e) =>{
         let div = e.parentNode.previousSibling;
-        console.log(div)
         div.classList.toggle("hidden");
         _change_icon(div,e);
     }
 
     const _change_icon =(div,button)=>{
         if(div.className.includes("hidden")){
-            button.textContent = "___";
+            button.children[0].src=src1;    
         } else {
-            button.textContent = '---';
+            button.children[0].src=src2;
         }
        
     }

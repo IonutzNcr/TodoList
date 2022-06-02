@@ -3,7 +3,6 @@
     padding:0;
 }
 #items_container>div{
-    padding:20px 20px 0 20px;
     justify-content: space-evenly;
     box-shadow: 0 10px 10px 0;
     margin-bottom: 20px;
@@ -27,8 +26,15 @@
 }
 
 .details{
+    padding:0;
+    margin:0;
     width: 100%;
+
+}
+.visible,.hidden{
+    padding:20px 20px 0 20px;
 }
 
-
-
+.description{
+    padding:0 20px;
+}

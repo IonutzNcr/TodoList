@@ -1,4 +1,6 @@
 import events from "./events";
+import src1 from "./1.png";
+
 
 const appender = (()=>{
     const append_category = (category)=>{
@@ -57,11 +59,14 @@ const appender = (()=>{
 
             const div_show_details = document.createElement("div");
             const button_show_details = document.createElement("button");
-            button_show_details.textContent = '___';
+            /* button_show_details.textContent = '___'; */
             button_show_details.classList.add("details");
             button_show_details.addEventListener("click",events.display_details.bind(null,button_show_details));
-            div_show_details.appendChild(button_show_details) 
-
+            div_show_details.appendChild(button_show_details)
+            const img = document.createElement("img");
+            img.setAttribute("src",src1);
+            button_show_details.appendChild(img);
+            
             div_visible.appendChild(p_title);
             div_visible.appendChild(p_dueDate);
             div_visible.appendChild(button_remove);

@@ -17,17 +17,21 @@ export default default_page;
 function _inputForCategory(){
     const div = document.createElement("div");
     div.setAttribute("id","container1");
+    const form = document.createElement("form");
     const input = document.createElement("input");
     input.setAttribute("placeholder","Add a title...");
     input.setAttribute("id","input_category");
+    input.setAttribute("required","");
     const button = document.createElement("button");
+    button.setAttribute("type","submit");
     button.textContent = "Add";
     button.setAttribute("id","add_category");
     button.addEventListener("click",events.display_new_category);
     button.addEventListener("click",_clearInpus.bind(null,"category"));
 
-    div.appendChild(input);
-    div.appendChild(button);
+    form.appendChild(input);
+    form.appendChild(button);
+    div.appendChild(form)
 
     return div;
 }
@@ -35,9 +39,11 @@ function _inputForCategory(){
 function _inputForItem(){
     const div = document.createElement("div");
     div.setAttribute("id","container3");
+    const form = document.createElement("form");
     const input = document.createElement("input");
     input.setAttribute("id","input_title");
     input.setAttribute("placeholder","Add a title...");
+    input.setAttribute("required","");
     //a changer mais pour l'instant je mets un input (a changer avec un calendrier);
     const input_calendrier = document.createElement("input");
     input_calendrier.setAttribute("placeholder","Pick your due date...");
@@ -85,15 +91,17 @@ function _inputForItem(){
 
     const add_btn = document.createElement("button");
     add_btn.setAttribute("id","add_item");
+    add_btn.setAttribute("type","submit");
     add_btn.textContent = "Add";
     add_btn.addEventListener("click",events.display_new_item);
     add_btn.addEventListener("click",_clearInpus.bind(null,"item"))
     
-    div.appendChild(input);
-    div.appendChild(input_description);
-    div.appendChild(input_calendrier); 
-    div.appendChild(fieldset);
-    div.appendChild(add_btn);
+    form.appendChild(input);
+    form.appendChild(input_description);
+    form.appendChild(input_calendrier); 
+    form.appendChild(fieldset);
+    form.appendChild(add_btn);
+    div.appendChild(form);
     
     return div;
 }

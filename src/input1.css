@@ -1,6 +1,6 @@
 /* layout */
 
-#container1{
+#container1 {
     padding:0 30px;
     display:flex;
     flex-direction: column;
@@ -8,6 +8,12 @@
     box-shadow: 0 10px 10px 0;
 }
 
+#container1 form{
+    display:flex;
+    flex-direction: column;
+    height:35%;
+    justify-content: space-between;
+}
 /* style */
 
 #container1{
@@ -18,3 +24,4 @@
     width: fit-content;
     margin-left:auto;
 }
+

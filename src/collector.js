@@ -8,8 +8,8 @@ const collector = (()=>{
     const getDataForItem = ()=>{
         return{
             title:document.querySelector('#input_title').value,
-            dueDate:document.querySelector('#input_dueDate').value,
-            description:document.querySelector('#input_description').value,
+            dueDate:document.querySelector('#input_dueDate').value==""?"none":document.querySelector('#input_dueDate').value,
+            description:document.querySelector('#input_description').value==""?"none":document.querySelector('#input_description').value,
             get category_id(){
                 //c'est ici
                 const ps = [...document.querySelectorAll("#categories_container p")];
