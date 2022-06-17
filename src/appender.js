@@ -36,12 +36,20 @@ const appender = (()=>{
             if(e.priority=="hight"){
                 div.classList.add("green");
             }
+
+           
             div.setAttribute("data-id",e.id);
             div.setAttribute("data-family",category.id);
             const div_visible = document.createElement("div");
             div_visible.classList.add("visible");
             const p_title = document.createElement("p");
             p_title.textContent = e.title;
+            if(e.checklist){
+                p_title.classList.add("checked");
+            } else {
+                p_title.classList.remove("checked");
+            }
+            p_title.addEventListener("click",events.check_item.bind(null,p_title));
             const p_dueDate = document.createElement("p");
             p_dueDate.classList.add("date");
             p_dueDate.textContent = e.dueDate;

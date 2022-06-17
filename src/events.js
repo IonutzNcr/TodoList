@@ -125,6 +125,14 @@ const events = (()=>{
         }
        
     }
+
+    const check_item = (element) =>{
+        if(element.className.includes("checked")){
+            element.classList.remove("checked");
+        } else {
+            element.classList.add("checked");
+        }
+    }
     return{
         display_new_item,
         display_new_category,
@@ -132,6 +140,7 @@ const events = (()=>{
         remove_category,
         remove_item,
         display_details,
+        check_item
     }
 })();
 

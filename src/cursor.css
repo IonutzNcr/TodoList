@@ -1,3 +1,7 @@
 button:hover,#categories_container:hover{
     cursor:pointer;
 }
+
+.visible p:first-child{
+    cursor:default;
+}

@@ -8,3 +8,9 @@
 .hidden{
     display:none;
 }
+
+/*Style for checking */
+
+.checked {
+    text-decoration: line-through;
+}
