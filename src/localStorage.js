@@ -1,4 +1,5 @@
 import appender from "./appender";
+import controller from "./controller";
 import create_default_category from "./default_category";
 import categories from "./stock";
 
@@ -28,8 +29,11 @@ function _addToStorage(){
 }
 
 function update_Storage(){
+    console.log(localStorage.getItem(0))
     localStorage.clear();
     _addToStorage();
+  
+    
 }
 
 export {checkState,update_Storage}

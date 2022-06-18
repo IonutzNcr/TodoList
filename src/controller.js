@@ -25,12 +25,6 @@ const controller = (()=>{
         category.items[index].priority = new_priority;
     }
 
-    const update_checklist = (category,item,new_checklist)=>{
-        console.log("This is ",new_checklist)
-        const index = +item.id;
-        category.items[index].checklist = new_checklist;
-    }
-    
     const update_bold = (category)=>{
         if(category.isBold){
             category.isBold = false;
@@ -52,24 +46,40 @@ const controller = (()=>{
         }
     }
 
-    const sort_items = (category)=>{
+    const sort_items = (category,reset=false)=>{
         category.items.sort((a,b)=>{
             if(a.priority=="hight"&&b.priority=="low") return -1;
             if(a.priority==b.priority&&+a.id>+b.id) return -1;
         })
+
+        if(reset=true){
+            category.items.sort((a,b)=>{
+                if(+a.id<+b.id) return -1
+            })
+        }
     }
 
+    const update_checked = (item)=>{
+        console.log(`first checklist is:${item.checklist}`)
+        if(item.checklist==true){
+            item.checklist=false;
+            console.log(`then checklist is:${item.checklist}`)
+        } else if(item.checklist==false){
+            item.checklist = true;
+            console.log(`then checklist is:${item.checklist}`)
+        }
+    }
     return{
         add_category,
         remove_category,
         add_item,
         remove_item,
         update_priority,
-        update_checklist,
         update_bold,
         update_id,
         update_item_id,
         sort_items,
+        update_checked,
     }
 })(); 
 

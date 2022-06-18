@@ -44,9 +44,10 @@ const appender = (()=>{
             div_visible.classList.add("visible");
             const p_title = document.createElement("p");
             p_title.textContent = e.title;
-            if(e.checklist){
+            console.log(e.checklist)
+            if(e.checklist==true){
                 p_title.classList.add("checked");
-            } else {
+            } else if(e.checklist==false){
                 p_title.classList.remove("checked");
             }
             p_title.addEventListener("click",events.check_item.bind(null,p_title));

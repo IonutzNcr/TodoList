@@ -127,12 +127,24 @@ const events = (()=>{
     }
 
     const check_item = (element) =>{
+        
+        let index_item = element.parentNode.parentNode.dataset.id;
+       
+        let index_category = element.parentNode.parentNode.dataset.family;
+        
+        controller.update_checked(categories[index_category].items[index_item]);
+        controller.sort_items(categories[index_category],true)
+        update_Storage();
+        
+
         if(element.className.includes("checked")){
             element.classList.remove("checked");
         } else {
             element.classList.add("checked");
         }
+
     }
+
     return{
         display_new_item,
         display_new_category,
@@ -140,7 +152,7 @@ const events = (()=>{
         remove_category,
         remove_item,
         display_details,
-        check_item
+        check_item,
     }
 })();
 
